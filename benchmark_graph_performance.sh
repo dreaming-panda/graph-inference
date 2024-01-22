@@ -34,6 +34,13 @@ CUDA_VISIBLE_DEVICES=0 python bencmark_graph_inference.py --model meta-llama/Lla
 CUDA_VISIBLE_DEVICES=0 python bencmark_graph_inference.py --model meta-llama/Llama-2-7b-hf --M 256 --P 128  --D 16 >> benchmark/7B_benchmark.log
 CUDA_VISIBLE_DEVICES=0 python bencmark_graph_inference.py --model meta-llama/Llama-2-7b-hf --M 256 --P 128  --D 32 >> benchmark/7B_benchmark.log
 
+CUDA_VISIBLE_DEVICES=0 python bencmark_graph_inference.py --model lmsys/vicuna-33b-v1.3 --M 256 --P 128  --D 1 >> benchmark/33B_benchmark.log
+CUDA_VISIBLE_DEVICES=0 python bencmark_graph_inference.py --model lmsys/vicuna-33b-v1.3 --M 256 --P 128  --D 2 >> benchmark/33B_benchmark.log
+CUDA_VISIBLE_DEVICES=0 python bencmark_graph_inference.py --model lmsys/vicuna-33b-v1.3 --M 256 --P 128  --D 4 >> benchmark/33B_benchmark.log
+CUDA_VISIBLE_DEVICES=0 python bencmark_graph_inference.py --model lmsys/vicuna-33b-v1.3 --M 256 --P 128  --D 8 >> benchmark/33B_benchmark.log
+CUDA_VISIBLE_DEVICES=0 python bencmark_graph_inference.py --model lmsys/vicuna-33b-v1.3 --M 256 --P 128  --D 16 >> benchmark/33B_benchmark.log
+CUDA_VISIBLE_DEVICES=0 python bencmark_graph_inference.py --model lmsys/vicuna-33b-v1.3 --M 256 --P 128  --D 32 >> benchmark/33B_benchmark.log
+
 
 
 
