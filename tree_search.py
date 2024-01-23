@@ -41,9 +41,20 @@ target_verify_time = []
 
 valid_budget = [1, 2, 4, 8, 16, 24, 32, 48, 64, 80, 96, 128]
 
+dec_time = torch.inf
 for i, b in enumerate(valid_budget):
     target_time = target_verify_time[i]
-    
+    for d, ac_len in enumerate(results[b]):
+        if ac_len < 0:
+            continue
+        x = (d * draft_inference_time + target_time) / ac_len
+        dec_time = min(x, dec_time)
+
+print(dec_time, valid_budget[0] / dec_time)
+
+
+
+
 
 
 
