@@ -1,0 +1,14 @@
+[2024-01-24 16:18:41,992] [INFO] [real_accelerator.py:158:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+Namespace(B=1, P=128, T=100, model='TheBloke/vicuna-33B-AWQ')
+Length :1, inference time:0.05464855432510376
+Length :2, inference time:0.057955784797668455
+Length :4, inference time:0.05851100921630859
+Length :8, inference time:0.05817124366760254
+Length :16, inference time:0.05662982702255249
+Length :24, inference time:0.05797681570053101
+Length :32, inference time:0.06026646614074707
+Length :48, inference time:0.07684470176696777
+Length :64, inference time:0.09552383184432983
+Length :80, inference time:0.10982621431350709
+Length :96, inference time:0.12581851720809936
+Length :128, inference time:0.15894943952560425
