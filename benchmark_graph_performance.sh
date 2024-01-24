@@ -55,6 +55,8 @@
 # CUDA_VISIBLE_DEVICES=0 python bencmark_graph_inference.py --model lmsys/vicuna-33b-v1.3 --M 256 --P 128  --D 128 >> benchmark/33B_benchmark.log
 
 CUDA_VISIBLE_DEVICES=0 python benchmark_awq.py --model TheBloke/vicuna-33B-AWQ >> benchmark/33BAWQ_benchmark.log
+CUDA_VISIBLE_DEVICES=0 python benchmark_HF.py --model lmsys/vicuna-33b-v1.3 >> benchmark/33B_benchmark.log
+
 
 
 
