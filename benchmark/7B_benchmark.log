@@ -4,3 +4,15 @@ Max Length :256, Decode Length :4, Prefix Length :128, inference time:0.01282119
 Max Length :256, Decode Length :8, Prefix Length :128, inference time:0.01313213586807251s
 Max Length :256, Decode Length :16, Prefix Length :128, inference time:0.013675470352172852s
 Max Length :256, Decode Length :32, Prefix Length :128, inference time:0.01449686050415039s
+Max Length :256, Decode Length :1, Prefix Length :128, inference time:0.012030994892120362s
+Max Length :256, Decode Length :2, Prefix Length :128, inference time:0.012559540271759033s
+Max Length :256, Decode Length :4, Prefix Length :128, inference time:0.012795827388763427s
+Max Length :256, Decode Length :8, Prefix Length :128, inference time:0.013095626831054688s
+Max Length :256, Decode Length :16, Prefix Length :128, inference time:0.01363239049911499s
+Max Length :256, Decode Length :24, Prefix Length :128, inference time:0.013986897468566895s
+Max Length :256, Decode Length :32, Prefix Length :128, inference time:0.014429333209991456s
+Max Length :256, Decode Length :48, Prefix Length :128, inference time:0.014716250896453857s
+Max Length :256, Decode Length :64, Prefix Length :128, inference time:0.014925765991210937s
+Max Length :256, Decode Length :80, Prefix Length :128, inference time:0.017979495525360108s
+Max Length :256, Decode Length :96, Prefix Length :128, inference time:0.019542503356933593s
+Max Length :256, Decode Length :128, Prefix Length :128, inference time:0.020403876304626464s

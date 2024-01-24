@@ -1,0 +1,2 @@
+[2024-01-23 23:39:04,556] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+Namespace(model='TheBloke/Llama-2-70B-AWQ', T=100, B=1, P=128)
