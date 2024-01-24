@@ -1,2 +1,20 @@
 [2024-01-23 23:39:04,556] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
 Namespace(model='TheBloke/Llama-2-70B-AWQ', T=100, B=1, P=128)
+[2024-01-24 01:56:05,237] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+Namespace(model='TheBloke/Llama-2-70B-AWQ', T=100, B=1, P=128)
+[2024-01-24 02:22:07,719] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+Namespace(model='TheBloke/Llama-2-70B-AWQ', T=100, B=1, P=128)
+[2024-01-24 07:09:02,144] [INFO] [real_accelerator.py:158:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+Namespace(B=1, P=128, T=100, model='TheBloke/Llama-2-70B-AWQ')
+Length :1, inference time:0.07733640193939209
+Length :2, inference time:0.08104727506637573
+Length :4, inference time:0.08165216445922852
+Length :8, inference time:0.08309843063354493
+Length :16, inference time:0.08014994859695435
+Length :24, inference time:0.10019505500793457
+Length :32, inference time:0.10417393445968628
+Length :48, inference time:0.14465594291687012
+Length :64, inference time:0.17295580625534057
+Length :80, inference time:0.2055340838432312
+Length :96, inference time:0.24130850076675414
+Length :128, inference time:0.3091542959213257
