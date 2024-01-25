@@ -16,7 +16,7 @@ args = parser.parse_args()
 print(args)
 
 #target_model = LlamaForCausalLM_Attn.from_pretrained(args.target, torch_dtype=torch.float16, device_map="auto")
-draft_model = LlamaForCausalLM.from_pretrained(args.model, torch_dtype=torch.float16).cuda()
+draft_model = LlamaForCausalLM.from_pretrained(args.model, torch_dtype=torch.float16, device_map="auto")
 
 
 # draft_model = deepspeed.init_inference(draft_model,  
