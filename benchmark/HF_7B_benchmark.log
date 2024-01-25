@@ -12,3 +12,17 @@ Length :64, inference time:0.03039752721786499
 Length :80, inference time:0.030950286388397218
 Length :96, inference time:0.03206303834915161
 Length :128, inference time:0.030525169372558593
+[2024-01-25 17:03:57,440] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+Namespace(model='meta-llama/Llama-2-7b-hf', T=100, B=1, P=128, M=256, D=8)
+Length :1, inference time:0.03290032386779785
+Length :2, inference time:0.03497150659561157
+Length :4, inference time:0.034885435104370116
+Length :8, inference time:0.03493468761444092
+Length :16, inference time:0.035257222652435305
+Length :24, inference time:0.03516817808151245
+Length :32, inference time:0.03648521900177002
+Length :48, inference time:0.035048367977142336
+Length :64, inference time:0.034756672382354734
+Length :80, inference time:0.03524712562561035
+Length :96, inference time:0.03522960186004639
+Length :128, inference time:0.034879400730133056
