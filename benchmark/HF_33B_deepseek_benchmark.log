@@ -1,2 +1,4 @@
 [2024-01-25 23:28:56,777] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
 Namespace(model='deepseek-ai/deepseek-coder-33b-base', T=100, B=1, P=128, M=256, D=8)
+[2024-01-26 02:39:16,598] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+Namespace(model='deepseek-ai/deepseek-coder-33b-base', T=100, B=1, P=128, M=256, D=8)

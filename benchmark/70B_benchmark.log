@@ -1,2 +1,6 @@
 [2024-01-25 23:36:39,218] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
 Namespace(model='meta-llama/Llama-2-70b-hf', T=100, B=1, P=128, M=256, D=8)
+[2024-01-26 02:49:27,347] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+Namespace(model='meta-llama/Llama-2-70b-hf', T=100, B=1, P=128, M=256, D=8)
+[2024-01-26 21:31:05,891] [INFO] [real_accelerator.py:158:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+Namespace(B=1, D=8, M=256, P=128, T=100, model='meta-llama/Llama-2-70b-hf')
