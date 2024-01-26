@@ -40,10 +40,10 @@ for l in LEN:
         output = draft_model(input_ids = sentence, use_cache=True, past_key_values=past_key_values)
     with profile(activities=[
         ProfilerActivity.CPU, ProfilerActivity.CUDA], record_shapes=True) as prof:
-        for _ in range(T):
+        for _ in range(1):
             output = draft_model(input_ids = sentence, use_cache=True, past_key_values=past_key_values)
     if not torch.distributed.is_initialized() or torch.distributed.get_rank() == 0:
-        print(prof.key_averages().table(sort_by="cuda_time_total"))
+        prof.export_chrome_trace("./benchmark/trace{}.json".format(args.L))
         
     
     
