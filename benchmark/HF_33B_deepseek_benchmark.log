@@ -2,3 +2,19 @@
 Namespace(model='deepseek-ai/deepseek-coder-33b-base', T=100, B=1, P=128, M=256, D=8)
 [2024-01-26 02:39:16,598] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
 Namespace(model='deepseek-ai/deepseek-coder-33b-base', T=100, B=1, P=128, M=256, D=8)
+[2024-01-26 21:42:40,746] [INFO] [real_accelerator.py:158:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+Namespace(B=1, D=8, M=256, P=128, T=100, model='deepseek-ai/deepseek-coder-33b-base')
+Length :1, inference time:0.06310372829437255
+Length :2, inference time:0.0701905107498169
+Length :4, inference time:0.069824960231781
+Length :8, inference time:0.07123286962509155
+Length :16, inference time:0.06991799354553223
+Length :24, inference time:0.06913805484771729
+Length :32, inference time:0.06874305009841919
+Length :48, inference time:0.06793314933776856
+Length :64, inference time:0.06951725482940674
+Length :80, inference time:0.0716048002243042
+Length :96, inference time:0.07208891153335571
+Length :128, inference time:0.07907357454299926
+[2024-01-26 22:08:19,429] [INFO] [real_accelerator.py:158:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+Namespace(B=1, D=8, M=256, P=128, T=100, model='deepseek-ai/deepseek-coder-33b-base')

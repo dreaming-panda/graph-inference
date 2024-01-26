@@ -4,3 +4,33 @@ Namespace(model='meta-llama/Llama-2-70b-hf', T=100, B=1, P=128, M=256, D=8)
 Namespace(model='meta-llama/Llama-2-70b-hf', T=100, B=1, P=128, M=256, D=8)
 [2024-01-26 21:31:05,891] [INFO] [real_accelerator.py:158:get_accelerator] Setting ds_accelerator to cuda (auto detect)
 Namespace(B=1, D=8, M=256, P=128, T=100, model='meta-llama/Llama-2-70b-hf')
+[2024-01-26 21:49:51,890] [INFO] [real_accelerator.py:158:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+Namespace(B=1, D=8, M=256, P=128, T=100, model='meta-llama/Llama-2-70b-hf')
+Length :1, inference time:0.10218734502792358
+Length :2, inference time:0.11342482328414917
+Length :4, inference time:0.11637893438339234
+Length :8, inference time:0.11294849872589112
+Length :16, inference time:0.11292735099792481
+Length :24, inference time:0.11532147645950318
+Length :32, inference time:0.11128761768341064
+Length :48, inference time:0.11335352659225464
+Length :64, inference time:0.11533240556716919
+Length :80, inference time:0.13157042264938354
+Length :96, inference time:0.13374184608459472
+Length :128, inference time:0.1418920636177063
+[2024-01-26 21:56:32,892] [INFO] [real_accelerator.py:158:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+Namespace(B=1, D=8, M=256, P=128, T=100, model='meta-llama/Llama-2-70b-hf')
+Length :1, inference time:0.10716409683227539
+Length :2, inference time:0.11463043451309204
+Length :4, inference time:0.11570098876953125
+Length :8, inference time:0.11415480852127075
+Length :16, inference time:0.1139004111289978
+Length :24, inference time:0.1149056053161621
+Length :32, inference time:0.11193661689758301
+Length :48, inference time:0.11457333326339722
+Length :64, inference time:0.11679464101791381
+Length :80, inference time:0.13272886037826537
+Length :96, inference time:0.13534049272537232
+Length :128, inference time:0.1431761407852173
+[2024-01-26 22:12:55,364] [INFO] [real_accelerator.py:158:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+Namespace(B=1, D=8, M=256, P=128, T=100, model='meta-llama/Llama-2-70b-hf')
