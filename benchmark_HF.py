@@ -3,6 +3,7 @@ from transformers import LlamaForCausalLM
 import argparse
 import time
 import deepspeed
+from torch.profiler import profile, record_function, ProfilerActivity
 #from Llama import LlamaForCausalLM_Attn
 parser = argparse.ArgumentParser()
 parser.add_argument('--model', type=str, default="TheBloke/Llama-2-70B-AWQ",help='model')
@@ -12,6 +13,7 @@ parser.add_argument('--P', type=int, default=128, help='prefix length')
 
 parser.add_argument('--M', type=int, default=256, help='max length')
 parser.add_argument('--D', type=int, default=8, help='dec length')
+parser.add_argument('--L', type=int, default=1, help='dec length')
 args = parser.parse_args()
 print(args)
 
@@ -24,7 +26,7 @@ draft_model = LlamaForCausalLM.from_pretrained(args.model, torch_dtype=torch.flo
 T = args.T
 B = args.B
 P = args.P
-LEN = [1, 2, 4, 8, 16, 24, 32, 48, 64, 80, 96, 128, 160, 192, 224, 256, 288, 320, 352, 384, 512]
+LEN = [args.L]
 prefix = torch.randint(low=3, high=30000, size=(B, P)).cuda()
 past_key_values = draft_model(input_ids = prefix, use_cache=True).past_key_values
 
@@ -36,20 +38,15 @@ for l in LEN:
     total_time = 0.0
     for _ in range(3):
         output = draft_model(input_ids = sentence, use_cache=True, past_key_values=past_key_values)
-    torch.cuda.synchronize()
-    t1 = time.time()
-    for _ in range(T):
-    
-        output = draft_model(input_ids = sentence, use_cache=True, past_key_values=past_key_values)
+    with profile(activities=[
+        ProfilerActivity.CPU, ProfilerActivity.CUDA], record_shapes=True) as prof:
+        for _ in range(T):
+            output = draft_model(input_ids = sentence, use_cache=True, past_key_values=past_key_values)
+    if not torch.distributed.is_initialized() or torch.distributed.get_rank() == 0:
+        print(prof.key_averages().table(sort_by="cuda_time_total"))
         
-       
-    torch.cuda.synchronize()
-    t2 = time.time()
-    total_time += (t2 - t1)
-    PERFORMANCE.append(total_time / T)
-
-for i, l in enumerate(LEN):
-    print("Length :{}, inference time:{}".format(l, PERFORMANCE[i]))
+    
+    
 
 
 

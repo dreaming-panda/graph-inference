@@ -55,11 +55,9 @@
 # CUDA_VISIBLE_DEVICES=0 python bencmark_graph_inference.py --model lmsys/vicuna-33b-v1.3 --M 256 --P 128  --D 128 >> benchmark/33B_benchmark.log
 
 #CUDA_VISIBLE_DEVICES=0 python benchmark_awq.py --model TheBloke/vicuna-33B-AWQ >> benchmark/33BAWQ_benchmark.log
-CUDA_VISIBLE_DEVICES=0 python benchmark_HF.py --model meta-llama/Llama-2-7b-hf >> benchmark/HF_7B_benchmark.log
-CUDA_VISIBLE_DEVICES=0 python benchmark_HF.py --model meta-llama/Llama-2-13b-hf >> benchmark/HF_13B_benchmark.log
-CUDA_VISIBLE_DEVICES=0 python benchmark_HF.py --model deepseek-ai/deepseek-coder-33b-base >> benchmark/HF_33B_deepseek_benchmark.log
+CUDA_VISIBLE_DEVICES=0 python benchmark_HF.py --model meta-llama/Llama-2-7b-hf --L 1 >> benchmark/HF_7B_benchmark_L1.log
 
-CUDA_VISIBLE_DEVICES=0,1 python benchmark_HF.py --model meta-llama/Llama-2-70b-hf >> benchmark/70B_benchmark.log
+CUDA_VISIBLE_DEVICES=0 python benchmark_HF.py --model meta-llama/Llama-2-7b-hf --L 2 >> benchmark/HF_7B_benchmark_L2.log
 
 
 
