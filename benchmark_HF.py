@@ -3,7 +3,6 @@ from transformers import LlamaForCausalLM
 import argparse
 import time
 from torch.profiler import profile, record_function, ProfilerActivity
-from Llama import LlamaForCausalLM_Attn
 parser = argparse.ArgumentParser()
 parser.add_argument('--model', type=str, default="meta-llama/Llama-2-7b-hf",help='model')
 parser.add_argument('--T', type=int, default=1000, help='repeat times')
