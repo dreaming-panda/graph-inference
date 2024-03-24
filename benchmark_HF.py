@@ -2,12 +2,11 @@ import torch
 from transformers import LlamaForCausalLM
 import argparse
 import time
-import deepspeed
 from torch.profiler import profile, record_function, ProfilerActivity
-#from Llama import LlamaForCausalLM_Attn
+from Llama import LlamaForCausalLM_Attn
 parser = argparse.ArgumentParser()
-parser.add_argument('--model', type=str, default="TheBloke/Llama-2-70B-AWQ",help='model')
-parser.add_argument('--T', type=int, default=100, help='repeat times')
+parser.add_argument('--model', type=str, default="meta-llama/Llama-2-7b-hf",help='model')
+parser.add_argument('--T', type=int, default=1000, help='repeat times')
 parser.add_argument('--B', type=int, default=1, help='batch size')
 parser.add_argument('--P', type=int, default=128, help='prefix length')
 
@@ -26,32 +25,25 @@ draft_model = LlamaForCausalLM.from_pretrained(args.model, torch_dtype=torch.flo
 T = args.T
 B = args.B
 P = args.P
-LEN = [args.L]
+LEN = [1, 32, 64, 128, 192, 256]
 prefix = torch.randint(low=3, high=30000, size=(B, P)).cuda()
 past_key_values = draft_model(input_ids = prefix, use_cache=True).past_key_values
 
 PERFORMANCE = []
+with torch.no_grad():
+    for l in LEN:
 
-for l in LEN:
-
-    sentence = torch.randint(low=3, high=30000, size=(B,  l)).cuda()
-    total_time = 0.0
-    for _ in range(3):
-        output = draft_model(input_ids = sentence, use_cache=True, past_key_values=past_key_values)
-    with profile(activities=[
-        ProfilerActivity.CPU, ProfilerActivity.CUDA], record_shapes=True) as prof:
-        for _ in range(1):
+        sentence = torch.randint(low=3, high=30000, size=(B,  l)).cuda()
+        total_time = 0.0
+        for _ in range(100):
             output = draft_model(input_ids = sentence, use_cache=True, past_key_values=past_key_values)
-    if not torch.distributed.is_initialized() or torch.distributed.get_rank() == 0:
-        prof.export_chrome_trace("./benchmark/trace{}.json".format(args.L))
-        
+        torch.cuda.synchronize()
+        t1 = time.time()
+        for _ in range(T):
+                output = draft_model(input_ids = sentence, use_cache=True, past_key_values=past_key_values)
+        torch.cuda.synchronize()
+        t2 = time.time()
+        total_time += (t2 - t1)
+        print("Length :{}, inference time:{}".format(l, total_time / T))
     
     
-
-
-
-
-
-
-
-
